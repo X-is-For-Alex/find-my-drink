@@ -19,6 +19,16 @@ function getCocktail() {
       .then(response => console.log(response))
   }
   
+  var alcoholTypes = ["7-Up","Absolut Citron","Ale","Amaretto","Añejo rum","Angelica root","Apple brandy","Apple cider","Apple juice","Applejack","Apricot brandy","Berries","Bitters","Blackberry brandy","Blended whiskey","Bourbon","Brandy","Cantaloupe","Carbonated water","Champagne","Cherry brandy","Chocolate liqueur","Chocolate syrup","Chocolate","Cider","Cocoa powder","Coffee brandy","Coffee liqueur","Coffee","Cognac","Cranberries","Cranberry juice","Creme de Cacao","Creme de Cassis","Dark rum","demerara Sugar","Dry Vermouth","Dubonnet Rouge","Egg yolk","Egg","Espresso","Everclear","Firewater","Galliano","Gin","Ginger","Grape juice","Grapefruit juice","Grapes","Grenadine","Heavy cream","Irish cream","Irish whiskey","Johnnie Walker","Kahlua","Kiwi","Lager","Lemon juice","Lemon vodka","Lemon","Lemonade","Light rum","Lime juice","Lime","Mango","Midori melon liqueur","Milk","Orange bitters","Orange","Ouzo","Peach nectar","Peach Vodka","Peppermint schnapps","Pineapple juice","Pisco","Port","Red wine","Ricard","Rum","Sambuca","Scotch","Sherry","Sloe gin","Southern Comfort","Spiced rum","Sprite","Strawberries","Strawberry schnapps","Sugar syrup","Sugar","Sweet Vermouth","Tea","Tequila","Tomato juice","Triple sec","Vodka","Water","Watermelon","Whiskey","Yoghurt"]
+
+
+  // Code below - for fuzzy match - insipired by: https://stackoverflow.com/questions/7948689/using-js-jquery-to-do-string-search-fuzzy-matching/7948780#7948780//
+var results = $(alcoholTypes)
+        .map(function(i,v){ 
+            if(v.toLowerCase().indexOf(cocktailSearch.toLowerCase())!=-1){return v} 
+        }).get()
+
+console.log(results)
   /* var queryString =  New HTML 
 
   location.assign(queryString) */
