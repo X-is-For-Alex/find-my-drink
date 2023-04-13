@@ -23,12 +23,11 @@ function getCocktail() {
 
 
   // Code below - for fuzzy match - insipired by: https://stackoverflow.com/questions/7948689/using-js-jquery-to-do-string-search-fuzzy-matching/7948780#7948780//
-var results = $(alcoholTypes)
-        .map(function(i,v){ 
-            if(v.toLowerCase().indexOf(cocktailSearch.toLowerCase())!=-1){return v} 
-        }).get()
-
-console.log(results)
+  var results = $(alcoholTypes)
+    .map(function(i,v){ 
+        if(v.toLowerCase().indexOf(cocktailSearch.toLowerCase())!=-1){return v} 
+    }).get()
+  console.log(results)
   /* var queryString =  New HTML 
 
   location.assign(queryString) */
