@@ -1,8 +1,14 @@
+:root {
+--main:#791515;
+--linkcolor:#ffffff;
+--linkhover:#c0c0c0;
+--headingfont: font-family: 'Bodoni Moda', serif;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  --red: #791515;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -77,4 +83,10 @@ main {
 main section {
   display: flex;
   margin: 1rem;
+}
+.custom-btn {
+
+}
+.custom-btn:hover {
+ 
 }
