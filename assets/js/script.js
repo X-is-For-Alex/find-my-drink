@@ -5,7 +5,7 @@
 function getCocktail() {
 const options = {method: 'GET'};
 
-fetch('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=screwdriver', options)
+fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=screwdriver', options)
   .then(response => response.json())
   .then(response => console.log(response))
   .catch(err => console.error(err));
