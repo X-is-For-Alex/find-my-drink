@@ -13,14 +13,12 @@ function getCocktail() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + cocktailSearch, options)
       .then(response => response.json())
       .then(response => console.log(response))
-      buildContainers()
   }
   else if (typeSelector == "names") {
     // User is redirected to new HTML page
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktailSearch, options)
       .then(response => response.json())
       .then(response => console.log(response))
-      buildContainers()
   }
   
   // Code below - for fuzzy match - insipired by: https://stackoverflow.com/questions/7948689/using-js-jquery-to-do-string-search-fuzzy-matching/7948780#7948780//
@@ -29,17 +27,18 @@ function getCocktail() {
         if(v.toLowerCase().indexOf(cocktailSearch.toLowerCase())!=-1){return v} 
     }).get()
   console.log(results)
+  buildContainers(results);
 
   
   }
 
 
-function buildContainers () {
-    for (var i=0; i < response.length; i++) {
+function buildContainers (results) {
+    for (var i=0; i < results.length; i++) {
     
       let container = document.querySelector(".result")
       let thumbnail = document.createElement("img")
-      thumbnail.src = response[i].html_url
+      thumbnail.src = results[i].html_url
 
       let drinkName = document.createElement("h1")
       let drinkMethod = document.createElement("p")
