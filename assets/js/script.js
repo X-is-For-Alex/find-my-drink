@@ -35,7 +35,31 @@ function getCocktail() {
         if(v.toLowerCase().indexOf(cocktailSearch.toLowerCase())!=-1){return v} 
     }).get()
   console.log(results)
-}
+
+  buildContainers(results);
+
+  }
+
+
+function buildContainers (results) {
+  for (var i=0; i < results.length; i++) {
+    
+    let container = document.querySelector(".result")
+    let thumbnail = document.createElement("img")
+    thumbnail.src = results[i].html_url
+
+    let drinkName = document.createElement("h1")
+    let drinkMethod = document.createElement("p")
+    let ingredients = document.createElement("ul")
+
+    container.appendChild(thumbnail)
+    container.appendChild(drinkName)
+    container.appendChild(drinkMethod)
+    container.appendChild(ingredients)
+  }
+};
+
+
 
 
 // auto complete module from jqueryUI
