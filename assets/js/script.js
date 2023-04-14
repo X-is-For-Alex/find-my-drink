@@ -27,6 +27,26 @@ function getCocktail() {
         if(v.toLowerCase().indexOf(cocktailSearch.toLowerCase())!=-1){return v} 
     }).get()
   console.log(results)
+
+  for (var i=0; i < response.length; i++) {
+    
+    let container = document.querySelector(".result")
+    let thumbnail = document.createElement("img")
+    thumbnail.src = response[i].html_url
+
+    let drinkName = document.createElement("h1")
+    let drinkMethod = document.createElement("p")
+    let ingredients = document.createElement("ul")
+
+    container.appendChild(thumbnail)
+    container.appendChild(drinkName)
+    container.appendChild(drinkMethod)
+    container.appendChild(ingredients)
+  }
+
+
+
+
   /* var queryString =  New HTML 
 
   location.assign(queryString) */
