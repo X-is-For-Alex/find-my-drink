@@ -76,7 +76,7 @@ h2 {
 main {
   display: flex;
   flex-flow: column;
-  margin: 7rem auto 1rem;
+  margin: 12rem auto 1rem;
   justify-content: center;
 }
 
