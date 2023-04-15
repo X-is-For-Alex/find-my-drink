@@ -167,20 +167,16 @@ function getCocktail() {
 //drinks: Array(94)
 function buildContainers(data) {
   let drinkArray = data;
-  let drinkNames = []
-  for (let i = 0; i < drinkArray.length; i++) {
-    drinkNames.push(drinkArray[i].strDrink)
-  }
-  console.log(drinkNames)
-  let drinkEl = document.querySelector(".searchResults")
+  let drinkEl = document.getElementById("#searchResults")
   let newDiv = document.createElement("div")
-  for (let j = 0; j < drinkNames.length; j++) {
-    drinkEl.appendChild(newDiv)
-    newDiv.innerHTML = drinkNames //how to make individual divs
+  for (let i = 0; i < drinkArray; i++) {
+
   }
+ 
+ 
 
   
-  
+
   // let thumbnail = document.createElement("img");
   // let drinkMethod = document.createElement("p");
   // let ingredients = document.createElement("ul");
