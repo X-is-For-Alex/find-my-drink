@@ -21,15 +21,24 @@ function getCocktail() {
   const options = {method: 'GET'};
   var cocktailSearch = document.getElementById("cocktailSearch").value
   var typeSelector = document.getElementById("typeSelector").value
+
   if (typeSelector == "ingredients") {
-    console.log("you chose to search by ingredients!")
     // User is redirected to new HTML page
+    location.assign(href = "./index2.html")
+
+    console.log("you should be on the new page! \n You've chosen to search by ingredients!")
+
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + cocktailSearch, options)
       .then(response => response.json())
       .then(response => console.log(response))
   }
+
   else if (typeSelector == "names") {
     // User is redirected to new HTML page
+    location.assign(href = "./index2.html")
+
+    console.log("you should be on the new page! \n You've chosen to search by drink names!")
+
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktailSearch, options)
       .then(response => response.json())
       .then(response => console.log(response))
@@ -41,12 +50,31 @@ function getCocktail() {
         if(v.toLowerCase().indexOf(cocktailSearch.toLowerCase())!=-1){return v} 
     }).get()
   console.log(results)
-  /* var queryString =  New HTML 
 
-  location.assign(queryString) */
+  buildContainers(results);
 
-  // .catch(err => console.error(err));
-}
+  }
+
+
+function buildContainers (results) {
+  for (var i=0; i < results.length; i++) {
+    
+    let container = document.querySelector(".result")
+    let thumbnail = document.createElement("img")
+    thumbnail.src = results[i].html_url
+
+    let drinkName = document.createElement("h1")
+    let drinkMethod = document.createElement("p")
+    let ingredients = document.createElement("ul")
+
+    container.appendChild(thumbnail)
+    container.appendChild(drinkName)
+    container.appendChild(drinkMethod)
+    container.appendChild(ingredients)
+  }
+};
+
+
 
 
 // auto complete module from jqueryUI
