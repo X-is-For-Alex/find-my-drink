@@ -22,27 +22,25 @@ function getCocktail() {
   var cocktailSearch = document.getElementById("cocktailSearch").value
   var typeSelector = document.getElementById("typeSelector").value
 
-  if (typeSelector == "ingredients") {
-    // User is redirected to new HTML page
-    location.assign(href = "./index2.html")
-
-    console.log("you should be on the new page! \n You've chosen to search by ingredients!")
-
+  if (typeSelector === "ingredients") {
+    console.log("You've chosen to search by ingredients!")
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + cocktailSearch, options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-  }
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+      buildContainers(data)
+  })}
 
-  else if (typeSelector == "names") {
-    // User is redirected to new HTML page
-    location.assign(href = "./index2.html")
-
-    console.log("you should be on the new page! \n You've chosen to search by drink names!")
-
+  else if (typeSelector === "names") {
+    console.log("You've chosen to search by drink names!")
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktailSearch, options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-  }
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (data) {
+    buildContainers(data)
+  })}
   
   // Code below - for fuzzy match - insipired by: https://stackoverflow.com/questions/7948689/using-js-jquery-to-do-string-search-fuzzy-matching/7948780#7948780//
   var results = $(alcoholTypes)
@@ -53,11 +51,11 @@ function getCocktail() {
 
   buildContainers(results);
 
-  }
+  };
 
 
-function buildContainers (results) {
-  for (var i=0; i < results.length; i++) {
+function buildContainers (data) {
+  for (var i=0; i < data.length; i++) {
     
     let container = document.querySelector(".result")
     let thumbnail = document.createElement("img")
