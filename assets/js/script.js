@@ -29,10 +29,6 @@ function getCocktail() {
   const options = {method: 'GET'};
 
   if (typeSelector == "ingredients") {
-    // User is redirected to new HTML page
-    location.assign(href = "./index2.html")
-
-    console.log("you should be on the new page! \n You've chosen to search by ingredients!")
 
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + cocktailSearch, options)
       .then(response => response.json())
@@ -40,10 +36,6 @@ function getCocktail() {
   }
 
   else if (typeSelector == "names") {
-    // User is redirected to new HTML page
-    location.assign(href = "./index2.html")
-
-    console.log("you should be on the new page! \n You've chosen to search by drink names!")
 
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktailSearch, options)
       .then(response => response.json())
@@ -58,7 +50,6 @@ function getCocktail() {
   console.log(results)
 
   buildContainers(results);
-
   }
 
 
