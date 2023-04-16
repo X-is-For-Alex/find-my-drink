@@ -15,15 +15,18 @@ body{
 }
 
 .fav{
-    position: relative;
+    display: flex;
+    position: absolute;
     width: 400px;
     height: 105px;
     background-color: brown;
     padding: 400px 32px;
     overflow: hidden;
-    border-radius: 16;
+    border-radius: 16px;
     background-image: url('../images/bgforfav.jpg');
     background-size: cover;
+    top: 70px;
+    left: 400px;
     
 }
 
