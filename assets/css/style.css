@@ -4,7 +4,6 @@
   --tertiary: #dfdfdf;
   --linkcolor: #ffffff;
   --linkhover: #a6b2c4;
-  --headingfont: font-family: 'Bodoni Moda', serif;
 }
 
 * {
@@ -58,11 +57,7 @@ nav a:hover {
 h1 {
   font-size: 3rem;
   color: white;
-}
-
-h2 {
-  font-size: 2rem;
-  text-align: center;
+  font-family: var(--headingfont);
 }
 
 main {
@@ -82,19 +77,25 @@ main section {
   margin: 0 30% 2rem;
 }
 
+#searchSection > * {
+  margin: 0 0 0.3rem 0;
+  font-size: 1rem;
+}
+
+#searchSection h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.searchResults > *, .ui-accordion-content > * {
+  font-family: "Raleway";
+}
+
 .ui-autocomplete {
-  max-height: 150px;
+  max-height: 200px;
   overflow-y: auto;
   /* prevent horizontal scrollbar */
   overflow-x: hidden;
-}
-
-.result {
-  margin: 0.5rem;
-  padding: 0.5rem;
-  display: flex;
-  background-color: #c4c5c6;
-  border-radius: 0.25rem;
 }
 
 .thumbnail {
@@ -102,7 +103,7 @@ main section {
   width: 100px;
   background-color: grey;
   flex: 0 0 auto;
-  border-radius: 0.25rem;
+  transition: height, 0.3s;
 }
 
 .card-contents {
@@ -110,10 +111,14 @@ main section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 0 1rem;
 }
 
-.ui-accordion .ui-accordion-header  {
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui-accordion .ui-accordion-header {
   font-family: var(--headingfont);
   background-color: var(--tertiary);
   font-size: 2rem;
@@ -121,22 +126,50 @@ main section {
   align-items: center;
   margin: 1rem 0 0 0;
   border: none;
-  transition: background-color 0.5s;
+  transition: background-color, 0.3s;
+}
+
+.ui-accordion .ui-accordion-header h3 {
+  flex: 2 0 40%;
+  transition: flex, 0.3s;
+  align-self: flex-start;
+}
+
+.ui-accordion .ui-accordion-header ul {
+  font-size: 1rem;
+  flex: 1 0 auto;
+}
+
+.ui-accordion .ui-accordion-header .thumbnail {
+  flex: 0 0 auto;
 }
 
 .ui-accordion .ui-state-hover, .ui-accordion-content {
   background-color: var(--secondary);
-  transition: background-color 0.5s;
+  transition: background-color 0.3s;
+  align-items: center;
 }
 
 .ui-accordion .ui-accordion-content {
-  border-radius: 0 0 0 3rem;
   border: none;
   border-top: none;
+  padding: 1rem 5%;
+  font-family: Raleway;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .ui-accordion .ui-state-active {
   background-color: var(--main);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.ui-accordion .ui-state-active h3 {
+  flex: 0 0 40%;
+}
+
+.ui-accordion .ui-state-active .thumbnail {
+  height: 300px;
+  width: 300px;
 }
 
 .ui-accordion p {
@@ -153,10 +186,6 @@ main section {
 
 #accordion img {
   margin: 0 2rem 0 0;
-}
-
-#searchSection > * {
-  margin: 0 0 0.3rem 0;
 }
 
 /***** MEDIA QUERIES *****/
