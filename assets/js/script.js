@@ -52,19 +52,14 @@ function buildContainers(response) {
   let indexArr = []
   let randoDrink = []
   drinkArr.push(response.drinks)
+  console.log(drinkArr)
   for (let i = 0; i < drinkArr[0].length; i++) {
-    indexArr.push.Math.floor(Math.random() * drinkArr[0].length)
+    indexArr.push(Math.floor(Math.random() * drinkArr[0].length))
+    randoDrink.push(drinkArr[0][indexArr[i]])
     if (i === 4) {break;}
   } 
-  console.log(indexArr)
-  randoDrink = indexArr.map(i => drinkArr[i])
   console.log(randoDrink)
-
-
-  //now it's an array of objects
-  // for (let i = 0; i < drinkArr.length; i++) {
-  //   strDrink = drinkArr[0].map(x => x.strDrink) //now it's an array of names
-  // }
+  console.log(randoDrink[0].strDrink)
 };
 
 // auto complete module from jqueryUI
