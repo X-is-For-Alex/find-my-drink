@@ -56,7 +56,6 @@ function getResults(response) {
   let indexArr = []
   let randoDrink = []
   drinkArr.push(response.drinks)
-
   for (let i = 0; i < drinkArr[0].length; i++) {
     indexArr.push(Math.floor(Math.random() * drinkArr[0].length))
     randoDrink.push(drinkArr[0][indexArr[i]])
@@ -89,8 +88,6 @@ function buildContainers(data) {
     card.appendChild(imgEl)
     resultsBox.appendChild(card)
   }
-  
-  
 }
 
 function idFetch (id) {
