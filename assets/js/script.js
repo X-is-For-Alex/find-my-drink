@@ -8,6 +8,8 @@ let ingrSelector = document.getElementById("ingredients")
 let cocktailSearch = document.getElementById("cocktailSearch");
 let typeSelector = document.getElementById("typeSelector");
 
+let resultsBox = document.querySelector("#accordion");
+
 const collapseBtn = document.getElementById('collapseBtn');
 const infoDiv = document.getElementById('moreinfobox');
 const options = { method: 'GET' };
@@ -26,7 +28,7 @@ function getCocktail() {
       .then(response => response.json())
       .then(function (response) { //want to have an array of names, one for img, one for descr...
         console.log(response)
-        buildContainers(response)
+        getResults(response)
       })
   }
 
@@ -47,7 +49,7 @@ function getCocktail() {
 }
 
 
-function buildContainers(response) {
+function getResults(response) {
   let drinkArr = []
   let indexArr = []
   let randoDrink = []
@@ -57,10 +59,25 @@ function buildContainers(response) {
     indexArr.push(Math.floor(Math.random() * drinkArr[0].length))
     randoDrink.push(drinkArr[0][indexArr[i]])
     if (i === 4) {break;}
-  } 
-  console.log(randoDrink)
-  console.log(randoDrink[0].strDrink)
+  }
+  console.log(randoDrink) 
+  buildContainers(randoDrink)
 };
+
+function buildContainers(data) {
+  for (i = 0; i < data.length; i++) {
+    let card = document.createElement("div")
+    card.setAttribute("class", "resultHeader")
+    let title = document.createElement("h3")
+    title.textContent = data[i].strDrink
+
+    card.appendChild(title)
+    resultsBox.appendChild(card)
+
+  }
+  
+  
+}
 
 // auto complete module from jqueryUI
 $(function () {
