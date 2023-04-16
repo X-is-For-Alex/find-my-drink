@@ -1,8 +1,8 @@
 :root {
---main:#791515;
---linkcolor:#ffffff;
---linkhover:#c0c0c0;
---headingfont: font-family: 'Bodoni Moda', serif;
+  --main: #2b7194;
+  --linkcolor: #ffffff;
+  --linkhover: #a6b2c4;
+  --headingfont: font-family: 'Bodoni Moda', serif;
 }
 
 * {
@@ -22,8 +22,9 @@ header {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  min-height: 7rem;
-  background-color: var(--red);
+  padding: 1rem 1rem;
+  min-height: 6.5rem;
+  background-color: var(--main);
   transition: clip-path 0.3s;
   clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
   position: fixed;
@@ -32,61 +33,126 @@ header {
 
 header a {
   font-size: 2rem;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   transition: color 0.3s, outline 0.7s;
-  outline-color: var(--red);
 }
 
 a {
   text-decoration: none;
 }
 
-nav a:link {
-  color: white;
-}
-
-nav a:visited {
+nav a:link,
+a:visited,
+a:active {
   color: white;
 }
 
 nav a:hover {
-  color: silver;
+  color: var(--linkhover);
   outline: thin solid;
 }
 
-nav a:active {
-  color: white;
-}
-
-nav {
-  margin: 1rem;
-}
-
 h1 {
-  font-size: 4rem;
-  padding-left: 2rem;
+  font-size: 3rem;
   color: white;
-  margin: 0.5rem 0;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
 main {
   display: flex;
   flex-flow: column;
-  margin: 12rem auto 1rem;
+  margin: 7rem auto 1rem;
   justify-content: center;
+  min-width: 50%;
 }
 
 main section {
   display: flex;
-  margin: 1rem;
+  flex-flow: column;
 }
-.custom-btn {
 
+#searchSection {
+  margin: 0 30% 2rem;
 }
-.custom-btn:hover {
- 
+
+.ui-autocomplete {
+  max-height: 150px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+}
+
+.result {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  background-color: #c4c5c6;
+  border-radius: 0.25rem;
+}
+
+.thumbnail {
+  height: 100px;
+  width: 100px;
+  background-color: grey;
+  flex: 0 0 auto;
+  border-radius: 0.25rem;
+}
+
+.thumbnail div p {
+  color: red;
+}
+
+.card-contents {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 1rem;
+}
+
+#accordion .ui-accordion-header {
+  font-family: var(--headingfont);
+  background-color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0 0 0;
+  border: thin solid var(--main);
+}
+
+.ui-state-active {
+  color: white;
+  background-color: var(--main);
+}
+
+.ui-icon {
+  display: none;
+}
+
+#expandBtn {
+  min-height: 2rem;
+  min-width: 2rem;
+}
+
+/***** MEDIA QUERIES *****/
+@media screen and (max-width: 992px) {
+  header {
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 0;
+    transition: clip-path 0.3s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    min-height: 30rems;
+    text-align: center;
+  }
+
+  main {
+    margin: 1rem;
+    flex-direction: column;
+  }
 }

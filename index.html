@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,57 +9,110 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;700&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;700&family=Roboto:wght@100;300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
+    integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
+
 <body>
 
   <header>
     <h1>Get your drink recipe!</h1>
-     <nav>
+    <nav>
       <a href="#about">About</a>
       <a href="#work">Projects</a>
       <a href="#contact">Contact</a>
-    </nav> 
+    </nav>
   </header>
 
   <main class="d-flex">
-
     <section id="searchSection">
-      <div class="">
-        <h2>Look for a drink!</h2>
-      </div>
+      <h2>Look for a drink!</h2>
       <div class="narrow right"></div>
+      <label for="cocktailSearch"></label>
+      <input id="cocktailSearch" placeholder="enter a drink name or ingredient here!" />
+      <select id="typeSelector">
+        <option value="ingredients">Ingredients</option>
+        <option value="names">Drink Names</option>
+      </select>
+      <button id="submit">submit</button>
     </section>
 
-    <label for="cocktailSearch">Enter your search here!</label>
-    <input id="cocktailSearch" />
-    <select id="typeSelector">
-      <option value="ingredients">Ingredients</option>
-      <option value="names">Drink Names</option>
-    </select>
-    <button id="submit">submit</button>
-
-    <section class="searchResults">
-      <div class="result"></div>
-      <div class="result"></div>
-      <div class="result"></div>
-      <div class="result"></div>
-      <div class="result"></div>
-      <div class="result"></div>
-      <div class="result"></div>
-    </section>
-
-    <div>
-      <button id="expandBtn">&darr;</button>
-      <button id="collapseBtn" style="display: none;">&uarr;</button>
-      <div id="moreinfobox" style="display: none;">
-        <p>info box</p>
+    <section class="searchResults card-contents">
+      <div id="accordion">
+        <h3><img class="thumbnail">Section 1</h3>
+        <div>
+          <p class="drinkMethod">
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam.
+          </p>
+          <ul class="drinkIngredients">
+            <li>ingredient 1</li>
+            <li>ingredient 2</li>
+            <li>ingredient 3</li>
+            <li>ingredient 4</li>
+            <li>ingredient 5</li>
+          </ul>
+        </div>
+        <h3><img class="thumbnail">Section 2</h3>
+        <div>
+          <p class="drinkMethod">
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam.
+          </p>
+          <ul class="drinkIngredients">
+            <li>ingredient 1</li>
+            <li>ingredient 2</li>
+            <li>ingredient 3</li>
+            <li>ingredient 4</li>
+            <li>ingredient 5</li>
+          </ul>
+        </div>
+        <h3><img class="thumbnail">Section 3</h3>
+        <div>
+          <p class="drinkMethod">
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam.
+          </p>
+          <ul class="drinkIngredients">
+            <li>ingredient 1</li>
+            <li>ingredient 2</li>
+            <li>ingredient 3</li>
+            <li>ingredient 4</li>
+            <li>ingredient 5</li>
+          </ul>
+        </div>
+        <h3><img class="thumbnail">Section 4</h3>
+        <div>
+          <p class="drinkMethod">
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam.
+          </p>
+          <ul class="drinkIngredients">
+            <li>ingredient 1</li>
+            <li>ingredient 2</li>
+            <li>ingredient 3</li>
+            <li>ingredient 4</li>
+            <li>ingredient 5</li>
+          </ul>
+        </div>
+        <h3><img class="thumbnail">Section 5</h3>
+        <div>
+          <p class="drinkMethod">
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam.
+          </p>
+          <ul class="drinkIngredients">
+            <li>ingredient 1</li>
+            <li>ingredient 2</li>
+            <li>ingredient 3</li>
+            <li>ingredient 4</li>
+            <li>ingredient 5</li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </section>
 
   </main>
 </body>
@@ -68,4 +122,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
 <script src="./assets/js/script.js"></script>
+
 </html>
