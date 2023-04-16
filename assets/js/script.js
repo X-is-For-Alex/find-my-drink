@@ -54,7 +54,7 @@ function getResults(response) {
   let indexArr = []
   let randoDrink = []
   drinkArr.push(response.drinks)
-  console.log(drinkArr)
+
   for (let i = 0; i < drinkArr[0].length; i++) {
     indexArr.push(Math.floor(Math.random() * drinkArr[0].length))
     randoDrink.push(drinkArr[0][indexArr[i]])
@@ -68,10 +68,20 @@ function buildContainers(data) {
   for (i = 0; i < data.length; i++) {
     let card = document.createElement("div")
     card.setAttribute("class", "resultHeader")
+
     let title = document.createElement("h3")
     title.textContent = data[i].strDrink
 
+    let ulEl = document.createElement("ul")
+    ulEl.setAttribute("class", "drinkIngredients")
+
+    let imgEl = document.createElement("img")
+    imgEl.setAttribute("class", "thumbnail")
+    imgEl.setAttribute("src", data[i].strDrinkThumb)
+
     card.appendChild(title)
+    card.appendChild(ulEl)
+    card.appendChild(imgEl)
     resultsBox.appendChild(card)
 
   }
