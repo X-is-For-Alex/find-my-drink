@@ -1,5 +1,7 @@
 :root {
   --main: #2b7194;
+  --secondary: #90b6c9;
+  --tertiary: #dfdfdf;
   --linkcolor: #ffffff;
   --linkhover: #a6b2c4;
   --headingfont: font-family: 'Bodoni Moda', serif;
@@ -16,6 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 475px;
+  /* background-color: var(--tertiary); */
 }
 
 header {
@@ -67,7 +70,7 @@ main {
   flex-flow: column;
   margin: 7rem auto 1rem;
   justify-content: center;
-  min-width: 50%;
+  width: 70%;
 }
 
 main section {
@@ -102,10 +105,6 @@ main section {
   border-radius: 0.25rem;
 }
 
-.thumbnail div p {
-  color: red;
-}
-
 .card-contents {
   flex: 1 0 auto;
   display: flex;
@@ -114,28 +113,50 @@ main section {
   padding: 0 1rem;
 }
 
-#accordion .ui-accordion-header {
+.ui-accordion .ui-accordion-header  {
   font-family: var(--headingfont);
-  background-color: white;
+  background-color: var(--tertiary);
   font-size: 2rem;
   display: flex;
   align-items: center;
   margin: 1rem 0 0 0;
-  border: thin solid var(--main);
+  border: none;
+  transition: background-color 0.5s;
 }
 
-.ui-state-active {
-  color: white;
+.ui-accordion .ui-state-hover, .ui-accordion-content {
+  background-color: var(--secondary);
+  transition: background-color 0.5s;
+}
+
+.ui-accordion .ui-accordion-content {
+  border-radius: 0 0 0 3rem;
+  border: none;
+  border-top: none;
+}
+
+.ui-accordion .ui-state-active {
   background-color: var(--main);
+}
+
+.ui-accordion p {
+  margin: 0 0 1rem 0;
+}
+
+.ui-accordion ul {
+  margin: 0 0 0 3rem;
 }
 
 .ui-icon {
   display: none;
 }
 
-#expandBtn {
-  min-height: 2rem;
-  min-width: 2rem;
+#accordion img {
+  margin: 0 2rem 0 0;
+}
+
+#searchSection > * {
+  margin: 0 0 0.3rem 0;
 }
 
 /***** MEDIA QUERIES *****/
