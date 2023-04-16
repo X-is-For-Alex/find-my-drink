@@ -67,9 +67,10 @@ function getResults(response) {
 };
 
 function buildContainers(data) {
+
   for (i = 0; i < data.length; i++) {
     let drinkId = idFetch(data[i].idDrink)
-    console.log("hi" + drinkId)
+    .then(console.log("hi" + drinkId)) //????????
     let card = document.createElement("div")
     card.setAttribute("class", "resultHeader")
 
@@ -95,9 +96,9 @@ function buildContainers(data) {
 function idFetch (id) {
   console.log(id)
   const options = { method: 'GET' };
-  fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id, options)
+  return fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id, options)
       .then(response => response.json())
-      .then(function (response) { //want to have an array of names, one for img, one for descr...
+      .then(function (response) {
         console.log(response)
       })     
 };
