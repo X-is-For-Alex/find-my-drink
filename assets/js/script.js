@@ -60,10 +60,26 @@ function getCocktail() {
 
 
 function buildContainers(response) {
-  let strDrink = []
-  for (var i = 0; i < response.length; i++) {
-    
-  }
+  let drinkArr = []
+  let indexArr = []
+  let randoDrink = []
+  drinkArr.push(response.drinks)
+  for (let i = 0; i < drinkArr[0].length; i++) {
+    indexArr.push.Object(Math.floor(Math.random() * drinkArr[0].length))
+    if (i === 4) {break;}
+  } 
+  console.log(indexArr)
+  randoDrink = indexArr.map(i => drinkArr[i])
+  console.log(randoDrink)
+
+
+  //now it's an array of objects
+  // for (let i = 0; i < drinkArr.length; i++) {
+  //   strDrink = drinkArr[0].map(x => x.strDrink) //now it's an array of names
+  // }
+  
+  
+
 };
 
 
