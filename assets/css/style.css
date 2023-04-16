@@ -1,8 +1,9 @@
 :root {
---main:#791515;
---linkcolor:#ffffff;
---linkhover:#c0c0c0;
---headingfont: font-family: 'Bodoni Moda', serif;
+  --main: #2b7194;
+  --secondary: #90b6c9;
+  --tertiary: #dfdfdf;
+  --linkcolor: #ffffff;
+  --linkhover: #a6b2c4;
 }
 
 * {
@@ -16,14 +17,16 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 475px;
+  /* background-color: var(--tertiary); */
 }
 
 header {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  min-height: 7rem;
-  background-color: var(--red);
+  padding: 1rem 1rem;
+  min-height: 6.5rem;
+  background-color: var(--main);
   transition: clip-path 0.3s;
   clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
   position: fixed;
@@ -32,61 +35,174 @@ header {
 
 header a {
   font-size: 2rem;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   transition: color 0.3s, outline 0.7s;
-  outline-color: var(--red);
 }
 
 a {
   text-decoration: none;
 }
 
-nav a:link {
-  color: white;
-}
-
-nav a:visited {
+nav a:link,
+a:visited,
+a:active {
   color: white;
 }
 
 nav a:hover {
-  color: silver;
+  color: var(--linkhover);
   outline: thin solid;
 }
 
-nav a:active {
-  color: white;
-}
-
-nav {
-  margin: 1rem;
-}
-
 h1 {
-  font-size: 4rem;
-  padding-left: 2rem;
+  font-size: 3rem;
   color: white;
-  margin: 0.5rem 0;
-}
-
-h2 {
-  font-size: 2.5rem;
+  font-family: var(--headingfont);
 }
 
 main {
   display: flex;
   flex-flow: column;
-  margin: 12rem auto 1rem;
+  margin: 7rem auto 1rem;
   justify-content: center;
+  width: 70%;
 }
 
 main section {
   display: flex;
-  margin: 1rem;
+  flex-flow: column;
 }
-.custom-btn {
 
+#searchSection {
+  margin: 0 30% 2rem;
 }
-.custom-btn:hover {
- 
+
+#searchSection > * {
+  margin: 0 0 0.3rem 0;
+  font-size: 1rem;
+}
+
+#searchSection h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.searchResults > *, .ui-accordion-content > * {
+  font-family: "Raleway";
+}
+
+.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+}
+
+.thumbnail {
+  height: 100px;
+  width: 100px;
+  background-color: grey;
+  flex: 0 0 auto;
+  transition: height, 0.3s;
+}
+
+.card-contents {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui-accordion .ui-accordion-header {
+  font-family: var(--headingfont);
+  background-color: var(--tertiary);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0 0 0;
+  border: none;
+  transition: background-color, 0.3s;
+}
+
+.ui-accordion .ui-accordion-header h3 {
+  flex: 2 0 40%;
+  transition: flex, 0.3s;
+  align-self: flex-start;
+}
+
+.ui-accordion .ui-accordion-header ul {
+  font-size: 1rem;
+  flex: 1 0 auto;
+}
+
+.ui-accordion .ui-accordion-header .thumbnail {
+  flex: 0 0 auto;
+}
+
+.ui-accordion .ui-state-hover, .ui-accordion-content {
+  background-color: var(--secondary);
+  transition: background-color 0.3s;
+  align-items: center;
+}
+
+.ui-accordion .ui-accordion-content {
+  border: none;
+  border-top: none;
+  padding: 1rem 5%;
+  font-family: Raleway;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.ui-accordion .ui-state-active {
+  background-color: var(--main);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.ui-accordion .ui-state-active h3 {
+  flex: 0 0 40%;
+}
+
+.ui-accordion .ui-state-active .thumbnail {
+  height: 300px;
+  width: 300px;
+}
+
+.ui-accordion p {
+  margin: 0 0 1rem 0;
+}
+
+.ui-accordion ul {
+  margin: 0 0 0 3rem;
+}
+
+.ui-icon {
+  display: none;
+}
+
+#accordion img {
+  margin: 0 2rem 0 0;
+}
+
+/***** MEDIA QUERIES *****/
+@media screen and (max-width: 992px) {
+  header {
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 0;
+    transition: clip-path 0.3s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    min-height: 30rems;
+    text-align: center;
+  }
+
+  main {
+    margin: 1rem;
+    flex-direction: column;
+  }
 }
