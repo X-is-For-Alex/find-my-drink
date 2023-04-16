@@ -62,12 +62,6 @@ function buildContainers(response) {
   console.log(randoDrink[0].strDrink)
 };
 
-// auto complete module from jqueryUI
-$(function () {
-  $("#cocktailSearch").autocomplete({
-    source: alcoholTypes
-  });
-});
 
 typeSelector.addEventListener("change", function (event) {
   console.log(`typeSelector: ${event.target.value}`)
