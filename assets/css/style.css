@@ -66,6 +66,7 @@ main {
   margin: 7rem auto 1rem;
   justify-content: center;
   width: 70%;
+  transition: display, 0.5s;
 }
 
 main section {
@@ -186,6 +187,11 @@ main section {
 
 #accordion img {
   margin: 0 2rem 0 0;
+}
+
+#test {
+  display: none;
+  margin: 20% auto;
 }
 
 /***** MEDIA QUERIES *****/

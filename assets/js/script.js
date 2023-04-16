@@ -40,7 +40,6 @@ function getCocktail() {
   // buildContainers(results);
 }
 
-
 function buildContainers(results) {
   for (var i = 0; i < results.length; i++) {
 
@@ -59,6 +58,14 @@ function buildContainers(results) {
   }
 };
 
+function toggleMain() {
+  var x = document.querySelector("main");
+  if (x.style.display === "none") {
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 // auto complete module from jqueryUI
 $(function () {
@@ -66,8 +73,6 @@ $(function () {
     source: alcoholTypes
   });
 });
-
-document.querySelector("#submit").addEventListener("click", getCocktail)
 
 typeSelector.addEventListener("change", function (event) {
   console.log(event.target.value)
@@ -88,3 +93,10 @@ $( function() {
     header: "span"
   });
 } );
+
+// $("#favorites").click(function(){
+//   $("main").toggle("drop", "slow");
+//   $("#test").toggle("drop", "slow");
+// });
+
+document.querySelector("#submit").addEventListener("click", getCocktail)
