@@ -69,23 +69,17 @@ function buildContainers(data) {
 
 function aFunction (data) {
   console.log(data)
-  console.log("data.drinks[0].strIngredient1", data.drinks[0].strIngredient1) //we are getting 5 separate objects w/ data we need to extract
-  console.log(data.drinks[0].strIngredient)
   let ingredients = []
-  ingredients.push(data.drinks[0])
-  console.log(ingredients)
-  
-  for (let i = 0; i < data.drinks[0].length; i++) {
-    if (data.drinks[0].strIngredient[i] !== null) {
-      ingredients.push(data.drinks[0].strIngredient[i])
-      
-    }
-    console.log(ingredients)
-  }
-  
-  // let filtered = ingredients.filter(ingredient => ingredient !== null)
-  // console.log(filtered[i])
 
+  if (data.drinks[0].strIngredient !== null) {
+    for(let i = 1; i < 15; i++) {
+      ingredients.push(data.drinks[0]['strIngredient' + i])
+      console.log(ingredients)
+  }}
+  
+  let filtered = ingredients.filter(ingredient => ingredient !== null)
+  console.log(filtered) //working!! this gives an array of strictly ingredients for each beverage, without the "nulls"//
+  
   let card = document.createElement("div")
   card.setAttribute("class", "resultHeader")
 
@@ -94,6 +88,8 @@ function aFunction (data) {
 
   let ulEl = document.createElement("ul")
   ulEl.setAttribute("class", "drinkIngredients")
+
+  //for loop
 
   let imgEl = document.createElement("img")
   imgEl.setAttribute("class", "thumbnail")
