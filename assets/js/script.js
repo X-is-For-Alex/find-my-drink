@@ -25,6 +25,7 @@ let resultLimit = 4;
 if (localStorage.getItem(favoritesKey)) {
   favorites = JSON.parse(localStorage.getItem(favoritesKey));
 }
+console.log(favoritesKey)
 
 favoriteButton.addEventListener('click', function() {
   const currentDrink = document.querySelector('.drink-name').textContent;
@@ -32,7 +33,7 @@ favoriteButton.addEventListener('click', function() {
     favorites.push(currentDrink);
     localStorage.setItem(favoritesKey, JSON.stringify(favorites));
   }
-  
+  console.log(favoritesKey)
 });
 
 
@@ -111,6 +112,10 @@ function aFunction (data) {
   let ulEl = document.createElement("ul")
   ulEl.setAttribute("class", "drinkIngredients")
 
+  
+ 
+
+ 
   //for loop
 
   let imgEl = document.createElement("img")
@@ -121,6 +126,7 @@ function aFunction (data) {
   card.appendChild(ulEl)
   card.appendChild(imgEl)
   resultsBox.appendChild(card)
+  card.appendChild(favoriteButton)
 }
 
 
