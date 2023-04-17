@@ -63,24 +63,24 @@ function getResults(response) {
 };
 
 function buildContainers(data) {
-
   for (i = 0; i < data.length; i++) {
     let drinkId = idFetch(data[i].idDrink)
-    
-  
   }
 }
 
 function aFunction (data) {
+  console.log(data)
   let ingredients = []
-  for(let i = 1; i < 21; i++) {
-    console.log(data["strIngredient" + i])
-    ingredients.push(data["strIngredient" + i])
-    
-  }
+
+  if (data.drinks[0].strIngredient !== null) {
+    for(let i = 1; i < 15; i++) {
+      ingredients.push(data.drinks[0]['strIngredient' + i])
+      console.log(ingredients)
+  }}
   
   let filtered = ingredients.filter(ingredient => ingredient !== null)
-  console.log(filtered[i])
+  console.log(filtered) //working!! this gives an array of strictly ingredients for each beverage, without the "nulls"//
+  
   let card = document.createElement("div")
   card.setAttribute("class", "resultHeader")
 
@@ -110,7 +110,6 @@ function idFetch (id) {
   return fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id, options)
       .then(response => response.json())
       .then(function (response) {
-        console.log(response)
         aFunction(response)
       })     
 };
