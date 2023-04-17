@@ -62,24 +62,30 @@ function getResults(response) {
 };
 
 function buildContainers(data) {
-
   for (i = 0; i < data.length; i++) {
     let drinkId = idFetch(data[i].idDrink)
-    
-  
   }
 }
 
 function aFunction (data) {
+  console.log(data)
+  console.log("data.drinks[0].strIngredient1", data.drinks[0].strIngredient1) //we are getting 5 separate objects w/ data we need to extract
+  console.log(data.drinks[0].strIngredient)
   let ingredients = []
-  for(let i = 1; i < 21; i++) {
-    console.log(data["strIngredient" + i])
-    ingredients.push(data["strIngredient" + i])
-    
+  ingredients.push(data.drinks[0])
+  console.log(ingredients)
+  
+  for (let i = 0; i < data.drinks[0].length; i++) {
+    if (data.drinks[0].strIngredient[i] !== null) {
+      ingredients.push(data.drinks[0].strIngredient[i])
+      
+    }
+    console.log(ingredients)
   }
   
-  let filtered = ingredients.filter(ingredient => ingredient !== null)
-  console.log(filtered[i])
+  // let filtered = ingredients.filter(ingredient => ingredient !== null)
+  // console.log(filtered[i])
+
   let card = document.createElement("div")
   card.setAttribute("class", "resultHeader")
 
@@ -88,8 +94,6 @@ function aFunction (data) {
 
   let ulEl = document.createElement("ul")
   ulEl.setAttribute("class", "drinkIngredients")
-
-  //for loop
 
   let imgEl = document.createElement("img")
   imgEl.setAttribute("class", "thumbnail")
@@ -109,7 +113,6 @@ function idFetch (id) {
   return fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id, options)
       .then(response => response.json())
       .then(function (response) {
-        console.log(response)
         aFunction(response)
       })     
 };
