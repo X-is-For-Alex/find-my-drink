@@ -32,10 +32,11 @@ function getCocktail() {
   let typeInput = typeSelector.value;
   const options = { method: 'GET' };
 
-  if (typeInput === "ingredients") {
+  if (typeInput === "ingredients" && !cocktailSearch == null) {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchInput, options)
       .then(response => response.json())
       .then(function (response) {
+        console.log(response)
         getSearchResults(response)
       })
   }
