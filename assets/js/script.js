@@ -73,7 +73,6 @@ function aFunction (data) {
     }}
     
     let filtered = ingredients.filter(ingredient => ingredient !== null)
-    console.log(filtered)
 
   
 
