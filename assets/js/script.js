@@ -38,7 +38,12 @@ function getCocktail() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchInput, options)
       .then(response => response.json())
       .then(function (response) {
+<<<<<<< HEAD
         getSearchResults(response)
+=======
+        getResults(response)
+        console.log(response)
+>>>>>>> 9d8b71c67776ccdd947a7bad2d56df0e6718142f
       })
   }
 
