@@ -84,14 +84,20 @@ function aFunction (data) {
 
   let ulEl = document.createElement("ul")
   ulEl.setAttribute("class", "drinkIngredients")
-  ulEl.textContent = filtered
 
-  //for loop
-
+  for (i = 0; i < filtered.length; i++) {
+    let liEl = document.createElement("li")
+    liEl.textContent = filtered[i]
+    ulEl.appendChild(liEl)
+  }
+  
   let imgEl = document.createElement("img")
   imgEl.setAttribute("class", "thumbnail")
   imgEl.setAttribute("src", data.drinks[0].strDrinkThumb)
-
+  
+  let newDiv = document.createElement("div")
+  newDiv.textContent = "Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Lorem ipsum dolor sit amet consecteturadipisicing elit. Ut non aperiam molestias veritatis aut delectus earum alias ipsum. Officiis consectetur ipsum illo tempore ab corrupti nemo voluptatibus impedit, rerum similique."
+  
   card.appendChild(title)
   card.appendChild(ulEl)
   card.appendChild(imgEl)
