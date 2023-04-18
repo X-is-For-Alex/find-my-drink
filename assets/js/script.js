@@ -16,7 +16,13 @@ const options = { method: 'GET' };
 
 const favoriteButton = document.getElementById('favorite-button');
 const favoritesKey = 'favoritesDrinks';
+const ingredientsKey = 'favoriteIngredients';
+const instructionsKey = 'favoriteInstructions';
+const imageKey = 'favoritesThumbnail';
 let favorites = [];
+let favIngredients = [];
+let favMethod = [];
+let favImage = [];
 
 let resultLimit = 4;
 
@@ -112,14 +118,25 @@ function aFunction(data) {
     if (favoriteButton.classList.contains("active")) {
       favoriteButton.classList.remove("active");
       favorites = favorites.filter((drink) => drink !== title.textContent);
+      favIngredients = filtered.filter((drink) => drink !== title.textContent);
+      favImage = data.drinks[0].strDrinkThumb.filter((drink) => drink !== title.textContent);
+      favMethod = data.drinks[0].strInstructions.filter((drink) => drink !== title.textContent);
       localStorage.setItem(favoritesKey, JSON.stringify(favorites));
+      localStorage.setItem(ingredientsKey, JSON.stringify(favIngredients));
+      localStorage.setItem(imageKey, JSON.stringify(favImage));
+      localStorage.setItem(instructionsKey, JSON.stringify(favMethod));
     }
     else {
       favoriteButton.classList.add("active");
       favorites.push(title.textContent);
+      favIngredients.push(filtered);
+      favImage.push(data.drinks[0].strDrinkThumb);
+      favMethod.push(data.drinks[0].strInstructions);
       localStorage.setItem(favoritesKey, JSON.stringify(favorites));
+      localStorage.setItem(ingredientsKey, JSON.stringify(favIngredients));
+      localStorage.setItem(imageKey, JSON.stringify(favImage));
+      localStorage.setItem(instructionsKey, JSON.stringify(favMethod));
     }
-    console.log(favorites);
   });
 
   let imgEl = document.createElement("img")
