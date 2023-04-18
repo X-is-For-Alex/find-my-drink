@@ -45,6 +45,11 @@ function getCocktail() {
 
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchInput, options)
       .then(response => response.json())
+      .then(function (response) { //want to have an array of names, one for img, one for descr...
+        getResults(response)
+        console.log(response)
+      })
+
   }
 
   // Code below - for fuzzy match - insipired by: https://stackoverflow.com/questions/7948689/using-js-jquery-to-do-string-search-fuzzy-matching/7948780#7948780//
