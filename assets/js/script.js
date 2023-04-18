@@ -22,19 +22,7 @@ let favorites = [];
 let resultLimit = 4;
 
 
-if (localStorage.getItem(favoritesKey)) {
-  favorites = JSON.parse(localStorage.getItem(favoritesKey));
-}
-console.log(favoritesKey)
 
-favoriteButton.addEventListener('click', function() {
-  const currentDrink = document.querySelector('.drink-name').textContent;
-  if (!favorites.includes(currentDrink)) {
-    favorites.push(currentDrink);
-    localStorage.setItem(favoritesKey, JSON.stringify(favorites));
-  }
-  console.log(favoritesKey)
-});
 
 
 
@@ -93,6 +81,11 @@ function buildContainers(data) {
   }
 }
 
+if (localStorage.getItem(favoritesKey)) {
+  favorites = JSON.parse(localStorage.getItem(favoritesKey));
+}
+console.log(favorites)
+
 function aFunction (data) {
   let ingredients = []
   for(let i = 1; i < 21; i++) {
@@ -112,7 +105,21 @@ function aFunction (data) {
   let ulEl = document.createElement("ul")
   ulEl.setAttribute("class", "drinkIngredients")
 
-  
+    let favoriteButton = document.createElement("button");
+    favoriteButton.setAttribute("id", "favorite-button");
+    favoriteButton.innerHTML = '<i class="fa fa-star"></i> Add to Favorites';
+    favoriteButton.addEventListener("click", function () {
+      if (favoriteButton.classList.contains("active")) {
+        favoriteButton.classList.remove("active");
+        favorites = favorites.filter((drink) => drink !== title.textContent);
+        localStorage.setItem(favoritesKey, JSON.stringify(favorites));
+      } else {
+        favoriteButton.classList.add("active");
+        favorites.push(title.textContent);
+        localStorage.setItem(favoritesKey, JSON.stringify(favorites));
+      }
+      console.log(favorites);
+    });
  
 
  
