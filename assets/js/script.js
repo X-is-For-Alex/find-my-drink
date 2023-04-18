@@ -85,17 +85,9 @@ function aFunction (data) {
   if (data.drinks[0].strIngredient !== null) {
     for(let i = 1; i < 15; i++) {
       ingredients.push(data.drinks[0]['strIngredient' + i])
-<<<<<<< HEAD
   }}
   
   let filtered = ingredients.filter(ingredient => ingredient !== null)
-=======
-    }}
-    
-    let filtered = ingredients.filter(ingredient => ingredient !== null)
-
-  
->>>>>>> 6ce76b5b78bed264f6055527f2cfa37eb8bd05e9
 
   let card = document.createElement("div")
   card.setAttribute("class", "resultHeader ui-accordion-header ui-corner-top ui-state-default ui-accordion-icons ui-accordion-header-collapsed ui-corner-all")
