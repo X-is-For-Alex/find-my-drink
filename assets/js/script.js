@@ -41,6 +41,7 @@ function getCocktail() {
       .then(response => response.json())
       .then(function (response) {
         getResults(response)
+        console.log(response)
       })
   }
 
