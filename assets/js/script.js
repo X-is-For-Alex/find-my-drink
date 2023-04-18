@@ -36,7 +36,7 @@ function getCocktail() {
   if (typeInput === "ingredients") {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchInput, options)
       .then(response => response.json())
-      .then(function (response) { //want to have an array of names, one for img, one for descr...
+      .then(function (response) {
         getResults(response)
       })
   }
@@ -45,7 +45,7 @@ function getCocktail() {
 
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchInput, options)
       .then(response => response.json())
-      .then(function (response) { //want to have an array of names, one for img, one for descr...
+      .then(function (response) {
         getResults(response)
         console.log(response)
       })
