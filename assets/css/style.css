@@ -134,11 +134,12 @@ main section {
   flex: 2 0 40%;
   transition: flex, 0.3s;
   align-self: flex-start;
+  max-width: 50%;
 }
 
 .ui-accordion .ui-accordion-header ul {
   font-size: 1rem;
-  flex: 1 0 auto;
+  flex: 2 0 auto;
 }
 
 .ui-accordion .ui-accordion-header .thumbnail {
