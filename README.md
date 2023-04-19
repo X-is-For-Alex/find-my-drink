@@ -3,7 +3,6 @@
 ## Project Title: Find My Drink 
 
 ## Open [https://x-is-for-alex.github.io/find-my-drink/](https://github.com/X-is-For-Alex/find-my-drink) to the Production version of the code and a screenshot of the live version
-![Here is a screenshot of the project's home page]
 
 # Objective
 Create a website that takes user input, passes that to CocktailDB API, and returns drink recipes that include user search terms. Also gives user the option to save recipes to localStoarge as a favorite.
