@@ -32,11 +32,10 @@ function getCocktail() {
   let typeInput = typeSelector.value;
   const options = { method: 'GET' };
 
-  if (typeInput === "ingredients" && !cocktailSearch == null) {
+  if (typeInput === "ingredients") {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchInput, options)
       .then(response => response.json())
       .then(function (response) {
-        console.log(response)
         getSearchResults(response)
       })
   }
@@ -83,7 +82,6 @@ if (localStorage.getItem(favoritesKey)) {
 
 
 function showSearchResults(data) {
-  console.log(data)
   let ingredients = []
 
   if (data.drinks[0].strIngredient !== null) {
@@ -109,16 +107,13 @@ function showSearchResults(data) {
   title.setAttribute("id", "heading" + headingIndex)
   title.textContent = data.drinks[0].strDrink
 
-  // let button = document.createElement("button")
-  // button.setAttribute("class", "accordion-button collapsed")
-  // button.setAttribute("type", "button")
-
   let content = document.createElement("div");
   content.setAttribute("id", "collapse" + headingIndex)
   content.setAttribute("class", "accordion-collapse collapse")
   content.setAttribute("aria-labelledby", "heading" + headingIndex)
-  // content.setAttribute("data-bs-parent", "#resultsAccordion")
-  content.textContent = data.drinks[0].strInstructions
+
+  let instructions = document.createElement("p")
+  instructions.textContent = data.drinks[0].strInstructions
 
   let body = document.createElement("div");
   body.setAttribute("class", "accordion-body")
@@ -126,9 +121,19 @@ function showSearchResults(data) {
   let ulEl = document.createElement("ul")
   ulEl.setAttribute("class", "drinkIngredients")
 
+  let measurements = []
   for (i = 0; i < filtered.length; i++) {
     let liEl = document.createElement("li")
-    liEl.textContent = filtered[i]
+
+    let j = i + 1
+    if (data.drinks[0]['strMeasure' + j] == null) {
+      measurements.push("")
+    }
+    else {
+      measurements.push(data.drinks[0]['strMeasure' + j])
+    }
+
+    liEl.textContent = measurements[i] + " " + filtered[i]
     ulEl.appendChild(liEl)
   }
 
@@ -167,6 +172,7 @@ function showSearchResults(data) {
   // title.append(button)
   content.append(body)
   heading.append(title)
+  content.append(instructions)
   content.append(favoriteButton)
   heading.append(ulEl)
   heading.append(imgEl)
