@@ -85,6 +85,11 @@ main section {
   text-align: center;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 .ui-autocomplete {
   max-height: 200px;
   overflow-y: auto;
