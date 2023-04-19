@@ -29,7 +29,7 @@ body{
     height: 105px;
     background-color: var(--second);
     padding: 400px 32px;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 180px;
     background-size: cover;
     top: 70px;
