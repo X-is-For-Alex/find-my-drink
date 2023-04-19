@@ -1,6 +1,6 @@
 :root {
-  --main: #2b7194;
-  --secondary: #90b6c9;
+  --main: #1c355c;
+  --secondary: #96aed2;
   --tertiary: #dfdfdf;
   --linkcolor: #ffffff;
   --linkhover: #a6b2c4;
@@ -17,6 +17,8 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 475px;
+  justify-content: center;
+  align-items: center;
   /* background-color: var(--tertiary); */
 }
 
@@ -29,7 +31,7 @@ header {
   background-color: var(--main);
   transition: clip-path 0.3s;
   clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
-  position: fixed;
+  position: relative;
   z-index: 5;
 }
 
@@ -63,9 +65,9 @@ h1 {
 main {
   display: flex;
   flex-flow: column;
-  margin: 7rem auto 1rem;
+  margin: 1rem auto 1rem;
   justify-content: center;
-  width: 70%;
+  width: 50%;
   transition: display, 0.5s;
 }
 
@@ -75,21 +77,17 @@ main section {
 }
 
 #searchSection {
-  margin: 0 30% 2rem;
+  margin: 0 25% 2rem;
 }
 
 #searchSection > * {
-  margin: 0 0 0.3rem 0;
+  margin: 0 0 0.5rem 0;
   font-size: 1rem;
 }
 
 #searchSection h2 {
   font-size: 2rem;
   text-align: center;
-}
-
-.searchResults > *, .ui-accordion-content > * {
-  font-family: "Raleway";
 }
 
 .ui-autocomplete {
@@ -99,100 +97,62 @@ main section {
   overflow-x: hidden;
 }
 
-.thumbnail {
-  height: 100px;
-  width: 100px;
-  background-color: grey;
-  flex: 0 0 auto;
-  transition: height, 0.3s;
-}
-
-.card-contents {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.resultHeader {
+.heading {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+  border-radius: 1rem;
 }
 
-.ui-accordion .ui-accordion-header {
-  font-family: var(--headingfont);
-  background-color: var(--tertiary);
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  margin: 1rem 0 0 0;
-  border: none;
-  transition: background-color, 0.3s;
+.accordion-header {
+  flex: 0 2 40%;
+  padding: 0.5rem;
+  font-weight: 600;
 }
 
-.ui-accordion .ui-accordion-header h3 {
-  flex: 2 0 40%;
-  transition: flex, 0.3s;
-  align-self: flex-start;
-  max-width: 50%;
+.drinkIngredients {
+  align-self: center;
+  flex: 1 0 40%;
 }
 
-.ui-accordion .ui-accordion-header ul {
-  font-size: 1rem;
-  flex: 2 0 auto;
+.heading button {
+  max-height: 2rem;
+  width: 10rem;
+  text-align: center;
 }
 
-.ui-accordion .ui-accordion-header .thumbnail {
-  flex: 0 0 auto;
-}
-
-.ui-accordion .ui-state-hover, .ui-accordion-content {
-  background-color: var(--secondary);
-  transition: background-color 0.3s;
-  align-items: center;
-}
-
-.ui-accordion .ui-accordion-content {
-  border: none;
-  border-top: none;
-  padding: 1rem 5%;
-  font-family: Raleway;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.ui-accordion .ui-state-active {
-  background-color: var(--main);
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.ui-accordion .ui-state-active h3 {
-  flex: 0 0 40%;
-}
-
-.ui-accordion .ui-state-active .thumbnail {
-  height: 300px;
-  width: 300px;
-}
-
-.ui-accordion p {
+.accordion-item {
   margin: 0 0 1rem 0;
+  border: none;
+  background-color: #b6c6e0;
+  transition: background-color 0.3s;
 }
 
-.ui-accordion ul {
-  margin: 0 0 0 3rem;
+.accordion-item:hover {
+  background-color: #a6bcdf;
 }
 
-.ui-icon {
-  display: none;
+.accordion img {
+  width: 100px;
+  height: 100px;
 }
 
-#accordion img {
-  margin: 0 2rem 0 0;
+.accordion-collapse {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: thin solid var(--main);
 }
 
-#test {
-  display: none;
-  margin: 20% auto;
+button {
+  border: none;
+  background-color: var(--main);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3b5277;
 }
 
 /***** MEDIA QUERIES *****/
