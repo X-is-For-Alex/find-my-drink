@@ -1,6 +1,6 @@
 :root {
-  --main: #2b7194;
-  --secondary: #90b6c9;
+  --main: #1c355c;
+  --secondary: #96aed2;
   --tertiary: #dfdfdf;
   --linkcolor: #ffffff;
   --linkhover: #a6b2c4;
@@ -80,7 +80,7 @@ main section {
   margin: 0 25% 2rem;
 }
 
-#searchSection > * {
+#searchSection>* {
   margin: 0 0 0.3rem 0;
   font-size: 1rem;
 }
@@ -97,9 +97,62 @@ main section {
   overflow-x: hidden;
 }
 
+.heading {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.accordion-header {
+  flex: 0 2 40%;
+  padding: 0.5rem;
+  font-weight: 600;
+}
+
+.drinkIngredients {
+  align-self: center;
+  flex: 1 0 40%;
+}
+
+.heading button {
+  max-height: 2rem;
+  width: 10rem;
+  text-align: center;
+}
+
+.accordion-item {
+  margin: 0 0 1rem 0;
+  border: none;
+  background-color: #b6c6e0;
+  transition: background-color 0.3s;
+}
+
+.accordion-item:hover {
+  background-color: #a6bcdf;
+}
+
 .accordion img {
   width: 100px;
   height: 100px;
+}
+
+.accordion-collapse {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: thin solid var(--main);
+}
+
+button {
+  border: none;
+  background-color: var(--main);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3b5277;
 }
 
 /***** MEDIA QUERIES *****/

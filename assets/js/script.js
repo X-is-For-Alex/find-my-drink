@@ -95,6 +95,10 @@ function showSearchResults(data) {
 
   let card = document.createElement("div")
   card.setAttribute("class", "accordion-item")
+  card.setAttribute("data-bs-toggle", "collapse")
+  card.setAttribute("data-bs-target", "#collapse" + headingIndex)
+  card.setAttribute("aria-expanded", "false")
+  card.setAttribute("aria-controls", "collapse" + headingIndex)
 
   let heading = document.createElement("div")
   heading.setAttribute("class", "heading")
@@ -102,15 +106,11 @@ function showSearchResults(data) {
   let title = document.createElement("h2")
   title.setAttribute("class", "accordion-header")
   title.setAttribute("id", "heading" + headingIndex)
+  title.textContent = data.drinks[0].strDrink
 
-  let button = document.createElement("button")
-  button.setAttribute("class", "accordion-button collapsed")
-  button.setAttribute("type", "button")
-  button.setAttribute("data-bs-toggle", "collapse")
-  button.setAttribute("data-bs-target", "#collapse" + headingIndex)
-  button.setAttribute("aria-expanded", "false")
-  button.setAttribute("aria-controls", "collapse" + headingIndex)
-  button.textContent = data.drinks[0].strDrink
+  // let button = document.createElement("button")
+  // button.setAttribute("class", "accordion-button collapsed")
+  // button.setAttribute("type", "button")
 
   let content = document.createElement("div");
   content.setAttribute("id", "collapse" + headingIndex)
@@ -124,7 +124,6 @@ function showSearchResults(data) {
 
   let ulEl = document.createElement("ul")
   ulEl.setAttribute("class", "drinkIngredients")
-  ulEl.textContent = filtered
 
   for (i = 0; i < filtered.length; i++) {
     let liEl = document.createElement("li")
@@ -164,12 +163,12 @@ function showSearchResults(data) {
   imgEl.setAttribute("class", "thumbnail")
   imgEl.setAttribute("src", data.drinks[0].strDrinkThumb)
 
-  title.append(button)
-  body.append(ulEl)
-  body.append(imgEl)
-  body.append(favoriteButton)
+  // title.append(button)
   content.append(body)
   heading.append(title)
+  content.append(favoriteButton)
+  heading.append(ulEl)
+  heading.append(imgEl)
   card.append(heading)
   card.append(content)
   resultsBox.append(card)
