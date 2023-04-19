@@ -83,6 +83,7 @@ if (localStorage.getItem(favoritesKey)) {
 
 
 function showSearchResults(data) {
+  console.log(data)
   let ingredients = []
 
   if (data.drinks[0].strIngredient !== null) {
