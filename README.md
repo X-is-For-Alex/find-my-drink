@@ -1,13 +1,13 @@
 ## Find My Drink - Group 5 Project 1
 This project was developed by Group 5 for Project 1.
-Alex Doll
-Jon Helton
-Zach Gilbert
-Mohamed Mohamed 
-& Amy Kilgour 
+Alex Doll [https://github.com/X-is-For-Alex]
+Jon Helton [https://github.com/JHelton404]
+Zach Gilbert [https://github.com/buster35]
+Mohamed Mohamed [https://github.com/MohamedH77]
+& Amy Kilgour [https://github.com/kilgette]
 
 # Usage 
-To use this application, visit the production version [https://x-is-for-alex.github.io/find-my-drink/](https://github.com/X-is-For-Alex/find-my-drink) to the Production version on your browser. You can search for drink recipes by entering the drink name or ingredients in the search bar. Once you find a drink you like, you can save it to your favorites by clicking the "Add to Favorites" button. You can access your favorite drinks from the Favorites page. 
+To use this application, visit the production version [https://x-is-for-alex.github.io/find-my-drink/](https://github.com/X-is-For-Alex/find-my-drink) to the Production version on your browser. You can search for drink recipes by entering the drink name or ingredients in the search bar. Once you find a drink you like, you can save it to your favorites by clicking the "Add to Favorites" button. You can access your favorite drinks from the Favorites page. ![Here is a screenshot of the deployed app](./assets/images/screenshot.jpg)
 
 # Objective
 This project was developed to fulfill Project 1's criteria, which included utilizing at least one API to create a Minimum Viable Product (MVP), developing two HTML pages, using LocalStorage, and implementing an input form.
