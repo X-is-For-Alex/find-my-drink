@@ -168,6 +168,7 @@ function showSearchResults(data) {
   let imgEl = document.createElement("img")
   imgEl.setAttribute("class", "thumbnail")
   imgEl.setAttribute("src", data.drinks[0].strDrinkThumb)
+  imgEl.setAttribute("alt", "image of " + data.drinks[0].strDrink)
 
   // title.append(button)
   content.append(body)

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find My Drink!</title>
+  <title>Drink Ideas</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,8 +28,8 @@
 
 <body>
 
-  <header>
-    <h1>Get your drink recipe!</h1>
+  <header class="sticky-top">
+    <h1>Find drink ideas!</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="favorites.html" id="favorites">Favorites</a>
@@ -38,11 +38,11 @@
   </header>
 
   <main>
-    <section id="searchSection">
-      <h2>Look for a drink!</h2>
+    <section id="searchSection" class="vstack gap-2 col-md-5 mx-auto">
+      <h2>search by a drink name or ingredient</h2>
       <div class="narrow right"></div>
       <label for="cocktailSearch"></label>
-      <input id="cocktailSearch" type="text" placeholder="enter a drink name or ingredient here!" />
+      <input id="cocktailSearch" type="text" placeholder="enter a drink name or ingredient" />
       <select id="typeSelector">
         <option value="ingredients">Ingredients</option>
         <option value="names">Drink Names</option>
