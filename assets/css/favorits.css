@@ -21,10 +21,7 @@ body{
 }
 
 .fav{
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    align-items: center;
     background-color: var(--second);
     border-radius: 180px;
     flex: 1 0 30%;  
@@ -62,12 +59,10 @@ body{
 }
 
 .menuDrinks {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    padding: 1rem;
-    margin: 1rem;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    max-width: 75%;
+    margin: 0 auto;
 }
 
 .displayedImage {
@@ -80,12 +75,12 @@ body{
 }
 
 .itemDescription {
-    max-width: 1000px;
+    max-width: 750px;
 }
 
 h1{
     font-size: 33px;
-    margin: 6rem auto;
+    margin: 2rem auto;
     background-color: #2a2c30;
     color: rgb(192, 192, 192);
     border-radius: 180px;
